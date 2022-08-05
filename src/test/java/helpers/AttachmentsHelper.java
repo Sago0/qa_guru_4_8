@@ -11,7 +11,9 @@ import java.nio.charset.StandardCharsets;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
+
 public class AttachmentsHelper {
+
     @Attachment(value = "{attachName}", type = "text/plain")
     public static String attachAsText(String attachName, String message) {
         return message;
@@ -45,4 +47,5 @@ public class AttachmentsHelper {
     public static String getConsoleLogs() {
         return String.join("\n", Selenide.getWebDriverLogs(BROWSER));
     }
+
 }

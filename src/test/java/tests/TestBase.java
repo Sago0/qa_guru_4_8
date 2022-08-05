@@ -16,6 +16,7 @@ public class TestBase {
         addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.startMaximized = true;
+
         if (System.getProperty("remote_driver") != null) {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("enableVNC", true);
