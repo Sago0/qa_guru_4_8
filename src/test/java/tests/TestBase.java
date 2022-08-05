@@ -25,6 +25,7 @@ public class TestBase {
         }
     }
 
+
     @AfterEach
     public void afterEach() {
         attachScreenshot("Last screenshot");
