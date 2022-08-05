@@ -30,12 +30,10 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-test {
-    useJUnitPlatform()
+tasks.withType(Test) {
+    systemProperties += System.properties
 }
 
-task positive_test(type: Test) {
-    useJUnitPlatform {
-        includeTags 'positive'
-    }
+test {
+    useJUnitPlatform()
 }
