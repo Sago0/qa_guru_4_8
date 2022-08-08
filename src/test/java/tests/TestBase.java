@@ -15,7 +15,7 @@ public class TestBase {
     static void setup() {
         addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
         Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.startMaximized = true;
+        Configuration.browserSize = "2560x1440";
 
         if (System.getProperty("remote_driver") != null) {
             DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -27,13 +27,13 @@ public class TestBase {
     }
 
 
-//    @AfterEach
-//    public void afterEach() {
-//        attachScreenshot("Last screenshot");
-//        attachPageSource();
-//        attachAsText("Browser console logs", getConsoleLogs());
-//        if (System.getProperty("video_storage") != null)
-//           attachVideo();
-//        closeWebDriver();
-//    }
+    @AfterEach
+    public void afterEach() {
+        attachScreenshot("Last screenshot");
+        attachPageSource();
+        attachAsText("Browser console logs", getConsoleLogs());
+        if (System.getProperty("video_storage") != null)
+           attachVideo();
+        closeWebDriver();
+    }
 }
