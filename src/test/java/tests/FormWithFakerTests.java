@@ -62,7 +62,7 @@ public class FormWithFakerTests extends TestBase {
             $("#hobbiesWrapper").$(byText(hobby3)).click();
         });
         step("Upload file", () -> {
-            $("#uploadPicture").uploadFromClasspath(picture);
+            $("#uploadPicture").uploadFromClasspath("img/" + picture);
         });
         step("Set address", () -> {
             $("#currentAddress").val(currentAddress);
